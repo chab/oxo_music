@@ -7,7 +7,7 @@
     <title>OXO-Music | Oxo Steps</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
-<body>
+<body class="product-page">
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="logo" href="../../" aria-label="OXO-Music home">O X O</a>
@@ -21,31 +21,42 @@
 
   <main class="container">
     <section class="product-detail" aria-labelledby="product-title">
-      <p class="eyebrow">The sequencer we couldn't find</p>
-      <h1 id="product-title">Oxo Steps</h1>
-
-      <div
-        class="carousel"
-        id="oxo-carousel"
-        data-start="1"
-        data-end="15"
-        data-base-path="images/gallery_"
-        data-extension=".png"
-      >
-        <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
-        <div class="carousel-viewport">
-          <img id="carousel-image" src="images/gallery_1.png" alt="Oxo Steps gallery image 1" loading="eager">
+      <div class="product-hero">
+        <div class="product-hero-main">
+          <p class="eyebrow">MIDI Performance Tool</p>
+          <h1 id="product-title" class="product-title">Oxo Steps</h1>
+          <p class="hero-meta">OXO-Music · MIDI plugin</p>
         </div>
-        <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
+        <aside class="hero-quote" aria-label="Product summary">
+          <p>"The sequencer we couldn't find."</p>
+          <p>Built as our own scratch-the-itch tool: enter one chord, shape six independent tracks, and let the full performance follow.</p>
+        </aside>
       </div>
 
-      <div class="carousel-dots" id="carousel-dots" aria-label="Gallery navigation"></div>
+      <div class="media-frame">
+        <div
+          class="carousel"
+          id="oxo-carousel"
+          data-start="1"
+          data-end="15"
+          data-base-path="images/gallery_"
+          data-extension=".png"
+        >
+          <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
+          <div class="carousel-viewport">
+            <img id="carousel-image" src="images/gallery_1.png" alt="Oxo Steps gallery image 1" loading="eager">
+          </div>
+          <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
+        </div>
 
-      <p class="carousel-caption" id="carousel-caption">Image 1</p>
+        <div class="carousel-dots" id="carousel-dots" aria-label="Gallery navigation"></div>
+
+        <p class="carousel-caption" id="carousel-caption">Image 1</p>
+      </div>
 
       <section class="product-content" aria-label="Oxo Steps description">
         <article class="detail-block detail-block-main">
-          <h2>Step sequencer + arpeggiator, in one MIDI tool</h2>
+          <h2>One chord can drive the whole performance</h2>
           <p>Oxo Steps combines a step sequencer and an arpeggiator in one MIDI performance tool.</p>
           <p>Enter one chord and drive up to 6 independent tracks on 6 MIDI channels. For example:</p>
 
@@ -73,7 +84,7 @@
 
         <article class="detail-block detail-block-compact">
           <h3>Feature highlights</h3>
-          <ul class="feature-tags" aria-label="Oxo Steps features">
+          <ul class="feature-list" aria-label="Oxo Steps features">
             <li>Polymetric lanes (e.g. notes over 8, octave over 3)</li>
             <li>Pattern direction: forward, backward, ping-pong, random</li>
             <li>Predictable probability lane controls</li>
