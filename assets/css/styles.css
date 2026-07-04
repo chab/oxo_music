@@ -1,9 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Orbitron:wght@500;700&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 :root {
   --bg-1: #000000;
   --bg-2: #0c0c0e;
   --bg-3: #151518;
+
+  --font-a: "Space Grotesk", "Segoe UI", "Roboto", sans-serif;
+  --font-b: "Sora", "Segoe UI", "Roboto", sans-serif;
+  --font-c: "IBM Plex Sans", "Segoe UI", "Roboto", sans-serif;
+  --font-body: var(--font-a);
 
   --accent-1: #607594;
   --accent-2: #3dc2d2;
@@ -41,10 +46,22 @@ body {
   isolation: isolate;
   display: flex;
   flex-direction: column;
-  font-family: "Space Grotesk", "Segoe UI", "Roboto", sans-serif;
+  font-family: var(--font-body);
   color: var(--text-main);
   background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
   line-height: 1.5;
+}
+
+body.font-a {
+  --font-body: var(--font-a);
+}
+
+body.font-b {
+  --font-body: var(--font-b);
+}
+
+body.font-c {
+  --font-body: var(--font-c);
 }
 
 body::before {
