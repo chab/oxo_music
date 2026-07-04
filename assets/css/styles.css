@@ -73,6 +73,63 @@ body::after {
     repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.03) 0 1px, transparent 1px 4px);
 }
 
+.product-page {
+  --product-before-image:
+    linear-gradient(140deg, rgba(0, 0, 0, 0.92) 10%, rgba(12, 12, 14, 0.72) 52%, rgba(21, 21, 24, 0.84) 100%),
+    linear-gradient(105deg, color-mix(in srgb, var(--accent-active) 9%, transparent) 0%, transparent 48%),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent-active) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--accent-active) 5%, transparent) 1px, transparent 1px);
+  --product-before-size: auto, auto, 68px 68px, 68px 68px;
+  --product-before-position: center, center, 0 0, 0 0;
+  --product-before-opacity: 0.42;
+
+  --product-after-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.28) 30%, rgba(0, 0, 0, 0.86) 100%),
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent-active) 10%, transparent), transparent 42%),
+    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.018) 0 1px, transparent 1px 3px);
+}
+
+.product-page.bg-b {
+  --product-before-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.94) 0%, rgba(10, 11, 14, 0.78) 58%, rgba(0, 0, 0, 0.92) 100%),
+    linear-gradient(115deg, transparent 0%, color-mix(in srgb, var(--accent-active) 8%, transparent) 40%, transparent 78%),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent-active) 6%, transparent) 1px, transparent 1px);
+  --product-before-size: auto, auto, 120px 120px;
+  --product-before-position: center, center, 0 0;
+  --product-before-opacity: 0.34;
+
+  --product-after-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.26) 36%, rgba(0, 0, 0, 0.88) 100%),
+    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.014) 0 1px, transparent 1px 5px);
+}
+
+.product-page.bg-c {
+  --product-before-image:
+    linear-gradient(160deg, rgba(0, 0, 0, 0.92) 0%, rgba(12, 12, 14, 0.75) 50%, rgba(21, 21, 24, 0.88) 100%),
+    radial-gradient(circle at 0 0, color-mix(in srgb, var(--accent-active) 12%, transparent), transparent 40%),
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--accent-active) 18%, transparent) 1px, transparent 1.2px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent-active) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--accent-active) 5%, transparent) 1px, transparent 1px);
+  --product-before-size: auto, auto, 12px 12px, 64px 64px, 64px 64px;
+  --product-before-position: center, left top, 0 0, 0 0, 0 0;
+  --product-before-opacity: 0.5;
+
+  --product-after-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.22) 34%, rgba(0, 0, 0, 0.86) 100%),
+    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.02) 0 1px, transparent 1px 3px);
+}
+
+.product-page::before {
+  background-image: var(--product-before-image);
+  background-size: var(--product-before-size);
+  background-position: var(--product-before-position);
+  opacity: var(--product-before-opacity);
+}
+
+.product-page::after {
+  background: var(--product-after-image);
+}
+
 a {
   color: inherit;
   text-decoration: none;
