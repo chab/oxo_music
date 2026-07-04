@@ -12,10 +12,17 @@
   --accent-5: #bea96d;
   --accent-6: #c183be;
   --accent-7: #cbcacb;
+  --accent-active: var(--accent-7);
+  --accent-14: color-mix(in srgb, var(--accent-active) 14%, transparent);
+  --accent-28: color-mix(in srgb, var(--accent-active) 28%, transparent);
+  --accent-32: color-mix(in srgb, var(--accent-active) 32%, transparent);
+  --accent-46: color-mix(in srgb, var(--accent-active) 46%, transparent);
 
   --text-main: #ffffff;
   --text-subtle: #a6a6ad;
   --border-soft: rgba(203, 202, 203, 0.18);
+  --tech-dot: color-mix(in srgb, var(--accent-active) 20%, transparent);
+  --tech-grid: color-mix(in srgb, var(--accent-active) 12%, transparent);
 }
 
 * {
@@ -30,13 +37,40 @@ body {
 
 body {
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
   font-family: "Space Grotesk", "Segoe UI", "Roboto", sans-serif;
   color: var(--text-main);
-  background:
-    radial-gradient(circle at 14% 10%, rgba(61, 194, 210, 0.2), transparent 30%),
-    radial-gradient(circle at 85% 0%, rgba(193, 131, 190, 0.16), transparent 28%),
-    linear-gradient(165deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
   line-height: 1.5;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--tech-dot) 1px, transparent 1.2px),
+    linear-gradient(var(--tech-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px);
+  background-size: 12px 12px, 72px 72px, 72px 72px;
+  background-position: 0 0, 0 0, 0 0;
+  opacity: 0.55;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 34%, rgba(0, 0, 0, 0.64) 100%),
+    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.03) 0 1px, transparent 1px 4px);
 }
 
 a {
@@ -45,7 +79,7 @@ a {
 }
 
 .container {
-  width: min(1080px, 92vw);
+  width: min(1160px, 92vw);
   margin: 0 auto;
 }
 
@@ -88,10 +122,12 @@ a {
 
 .site-nav a:hover,
 .site-nav a.active {
-  color: var(--accent-2);
+  color: var(--accent-active);
 }
 
 main {
+  flex: 1 0 auto;
+  width: 100%;
   padding: 48px 0 72px;
 }
 
@@ -104,7 +140,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.74rem;
-  color: var(--accent-5);
+  color: var(--accent-active);
 }
 
 .hero h1,
@@ -119,7 +155,6 @@ main {
 .hero p {
   margin: 0;
   color: var(--text-subtle);
-  max-width: 62ch;
 }
 
 .section-head {
@@ -132,7 +167,7 @@ main {
 .section-head h2 {
   margin: 0;
   font-size: 1.3rem;
-  color: var(--accent-7);
+  color: var(--accent-active);
 }
 
 .product-grid {
@@ -152,7 +187,7 @@ main {
 
 .product-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(61, 194, 210, 0.46);
+  border-color: var(--accent-46);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.36);
 }
 
@@ -190,16 +225,13 @@ main {
 
 .carousel {
   margin-top: 18px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 12px;
+  position: relative;
 }
 
 .carousel-viewport {
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(61, 194, 210, 0.32);
+  border: 1px solid var(--accent-32);
   background: #0b0c10;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.36);
 }
@@ -213,26 +245,43 @@ main {
 }
 
 .carousel-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid var(--border-soft);
-  background: rgba(12, 12, 14, 0.88);
-  color: var(--accent-2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(34px, 3.5vw, 50px);
+  border-radius: 0;
+  border: 1px solid var(--accent-14);
+  background: rgba(6, 8, 12, 0.2);
+  color: var(--accent-active);
   font-size: 1.35rem;
+  line-height: 1;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-btn.prev {
+  left: 0;
+  border-left: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .carousel-btn:hover {
-  border-color: rgba(61, 194, 210, 0.5);
-  transform: translateY(-1px);
+  border-color: var(--accent-28);
+  background: rgba(7, 11, 17, 0.34);
 }
 
 .carousel-btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;
-  transform: none;
 }
 
 .carousel-dots {
@@ -255,7 +304,7 @@ main {
 
 .carousel-dot.active {
   transform: scale(1.25);
-  background: var(--accent-2);
+  background: var(--accent-active);
 }
 
 .carousel-caption {
@@ -279,11 +328,12 @@ main {
 }
 
 .support-card .mail-link {
-  color: var(--accent-2);
+  color: var(--accent-active);
   font-weight: 600;
 }
 
 .site-footer {
+  margin-top: auto;
   border-top: 1px solid var(--border-soft);
   background: rgba(0, 0, 0, 0.45);
 }
@@ -315,17 +365,15 @@ main {
   }
 
   .carousel {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    margin-top: 14px;
   }
 
   .carousel-btn {
-    width: 40px;
-    height: 40px;
+    width: 34px;
   }
 
   .carousel .prev,
   .carousel .next {
-    justify-self: center;
+    top: 0;
   }
 }
