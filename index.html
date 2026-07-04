@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OXO-Music</title>
+    <meta name="description" content="OXO-Music creates music plugins for modern producers.">
+    <title>OXO-Music | Music Plugins</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <h1>OXO-Music</h1>
-  <p>Under construction</p>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="./" aria-label="OXO-Music home">O X O</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="active" href="./">Home</a>
+        <a href="#products">Products</a>
+        <a href="support/">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <p class="eyebrow">Music Plugins</p>
+      <h1>Tools built for flow and precision.</h1>
+      <p>Discover OXO instruments and utilities crafted for creative sequencing and performance.</p>
+    </section>
+
+    <section class="container" id="products" aria-labelledby="products-heading">
+      <div class="section-head">
+        <h2 id="products-heading">Products</h2>
+      </div>
+
+      <div class="product-grid">
+        <a class="product-card" href="products/oxo_steps/" aria-label="View Oxo Steps product page">
+          <div class="product-image-wrap">
+            <img src="images/oxo_steps_preview.png" alt="Oxo Steps plugin interface preview" loading="lazy">
+          </div>
+          <div class="product-meta">
+            <h3>Oxo Steps</h3>
+            <p>Creative sequencer plugin</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> OXO-Music</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

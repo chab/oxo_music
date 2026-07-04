@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OXO-Steps</title>
+    <meta name="description" content="Explore Oxo Steps with a full gallery of interface screenshots.">
+    <title>OXO-Music | Oxo Steps</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-  <h1>OXO-Steps</h1>
-  <p>Under construction</p>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="../../" aria-label="OXO-Music home">O X O</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <a class="active" href="../../#products">Products</a>
+        <a href="../../support/">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="product-detail" aria-labelledby="product-title">
+      <p class="eyebrow">Plugin Gallery</p>
+      <h1 id="product-title">Oxo Steps</h1>
+
+      <div
+        class="carousel"
+        id="oxo-carousel"
+        data-start="1"
+        data-end="15"
+        data-base-path="images/gallery_"
+        data-extension=".png"
+      >
+        <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
+        <div class="carousel-viewport">
+          <img id="carousel-image" src="images/gallery_1.png" alt="Oxo Steps gallery image 1" loading="eager">
+        </div>
+        <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots" aria-label="Gallery navigation"></div>
+
+      <p class="carousel-caption" id="carousel-caption">Image 1</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> OXO-Music</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/carousel.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
