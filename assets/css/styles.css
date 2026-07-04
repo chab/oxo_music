@@ -471,10 +471,10 @@ main {
 }
 
 .track-list {
-  margin: 12px 0 0;
+  margin: 40px 0 40px;
   padding-left: 18px;
   display: grid;
-  gap: 10px;
+  gap: 7px;
 }
 
 .track-list li {
@@ -486,10 +486,32 @@ main {
   font-weight: 600;
 }
 
+.track-list li:nth-child(1) strong {
+  color: var(--accent-2);
+}
+
+.track-list li:nth-child(2) strong {
+  color: var(--accent-3);
+}
+
+.track-list li:nth-child(3) strong {
+  color: var(--accent-4);
+}
+
+.track-list li:nth-child(4) strong {
+  color: var(--accent-5);
+}
+
 .detail-note {
-  margin-top: 14px;
+  margin-top: 0;
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid var(--accent-active);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent-active) 8%, rgba(6, 8, 12, 0.78));
   color: var(--text-main);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .detail-block-compact {
