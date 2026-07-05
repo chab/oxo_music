@@ -609,6 +609,17 @@ main {
   transform: translateY(1px);
 }
 
+.download-btn.is-disabled {
+  opacity: 0.62;
+  border-color: var(--accent-14);
+  background: rgba(6, 8, 12, 0.3);
+}
+
+.download-btn.is-disabled:hover {
+  border-color: var(--accent-14);
+  background: rgba(6, 8, 12, 0.3);
+}
+
 .download-note {
   margin: 0;
   font-size: 0.84rem;
