@@ -503,6 +503,104 @@ main {
 }
 
 
+.download-links {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.download-group {
+  display: grid;
+  gap: 10px;
+}
+
+.download-group + .download-group {
+  border-left: 1px solid var(--accent-14);
+  padding-left: 16px;
+}
+
+.download-group-title {
+  margin: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.09em;
+  color: var(--text-heading);
+}
+
+.app-store-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.app-store-icon-link,
+.app-store-btn {
+  height: 52px;
+  border: 1px solid var(--accent-28);
+  border-radius: 7px;
+  background: rgba(6, 8, 12, 0.42);
+  overflow: hidden;
+}
+
+.app-store-icon-link {
+  width: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-store-icon-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-store-btn {
+  width: fit-content;
+  display: inline-block;
+}
+
+.app-store-btn img {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.app-store-icon-link:hover,
+.app-store-btn:hover {
+  border-color: var(--accent-46);
+}
+
+.download-btn {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 8px 16px;
+  border: 1px solid var(--accent-28);
+  border-radius: 7px;
+  background: rgba(6, 8, 12, 0.42);
+  color: var(--text-main);
+  font-weight: 600;
+  line-height: 1;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  border-color: var(--accent-46);
+  background: rgba(6, 8, 12, 0.58);
+}
+
+.download-btn:active {
+  transform: translateY(1px);
+}
+
+.download-note {
+  margin: 0;
+  font-size: 0.84rem;
+}
+
 .mail-link {
   color: var(--accent-active);
   font-weight: 600;
@@ -572,6 +670,17 @@ main {
 
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .download-links {
+    grid-template-columns: 1fr;
+  }
+
+  .download-group + .download-group {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--accent-14);
+    padding-top: 16px;
   }
 
   .feature-list li {
