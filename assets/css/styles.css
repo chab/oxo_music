@@ -7,13 +7,14 @@
   --font-body: var(--font-a);
 
   --accent-1: #607594;
-  --accent-2: #3dc2d2;
+  /* --accent-2: #3dc2d2; */
+  --accent-2: #177c88;
   --accent-3: #dd9db2;
   --accent-4: #6ea49b;
   --accent-5: #bea96d;
   --accent-6: #c183be;
   --accent-7: #cbcacb;
-  --accent-active: var(--accent-7);
+  --accent-active: var(--accent-2);
   --accent-14: color-mix(in srgb, var(--accent-active) 14%, transparent);
   --accent-28: color-mix(in srgb, var(--accent-active) 28%, transparent);
   --accent-32: color-mix(in srgb, var(--accent-active) 32%, transparent);
@@ -467,6 +468,7 @@ main {
   display: inline-block;
   padding: 7px 12px;
   border-radius: 6px;
+  border: 1px solid var(--accent-active);
   background: color-mix(in srgb, var(--accent-active) 8%, rgba(6, 8, 12, 0.78));
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -504,14 +506,16 @@ main {
 
 
 .download-links {
-  margin-top: 14px;
+  margin-top: 22px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
 .download-group {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -522,9 +526,16 @@ main {
 
 .download-group-title {
   margin: 0;
+  width: fit-content;
+  display: inline-block;
+  padding: 6px 12px;
   font-size: 0.82rem;
   letter-spacing: 0.09em;
-  color: var(--text-heading);
+  color: var(--accent-active);
+  font-weight: 700;
+  border: 1px solid var(--accent-28);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-active) 10%, rgba(6, 8, 12, 0.78));
 }
 
 .app-store-row {
@@ -532,6 +543,7 @@ main {
   gap: 10px;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 8px;
 }
 
 .app-store-icon-link,
@@ -575,6 +587,7 @@ main {
 .download-btn {
   width: fit-content;
   display: inline-flex;
+  justify-self: start;
   align-items: center;
   min-height: 52px;
   padding: 8px 16px;
@@ -599,6 +612,27 @@ main {
 .download-note {
   margin: 0;
   font-size: 0.84rem;
+}
+
+.download-why {
+  margin: 0;
+  width: 100%;
+}
+
+.download-why summary {
+  width: fit-content;
+  cursor: pointer;
+  font-size: 0.84rem;
+  color: var(--accent-active);
+  font-weight: 600;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.download-why p {
+  margin: 8px 0 0;
+  font-size: 0.84rem;
+  color: var(--text-subtle);
 }
 
 .mail-link {
