@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const imageEl = document.getElementById("carousel-image");
   const dotsContainer = document.getElementById("carousel-dots");
-  const captionEl = document.getElementById("carousel-caption");
   const prevBtn = carousel.querySelector(".prev");
   const nextBtn = carousel.querySelector(".next");
 
@@ -42,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slides.length === 0) {
       imageEl.removeAttribute("src");
       imageEl.alt = "No gallery images available";
-      captionEl.textContent = "No images available";
       if (prevBtn) prevBtn.disabled = true;
       if (nextBtn) nextBtn.disabled = true;
       return;
@@ -54,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const current = slides[currentIndex];
       imageEl.src = current.src;
       imageEl.alt = `Oxo Steps gallery image ${current.number}`;
-      captionEl.textContent = `Image ${current.number}`;
 
       const dots = dotsContainer.querySelectorAll(".carousel-dot");
       dots.forEach((dot, idx) => {
