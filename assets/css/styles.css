@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Orbitron:wght@500;700&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap");
 
 :root {
   --bg-1: #000000;
   --bg-2: #0c0c0e;
   --bg-3: #151518;
 
-  --font-a: "Space Grotesk", "Segoe UI", "Roboto", sans-serif;
-  --font-b: "Sora", "Segoe UI", "Roboto", sans-serif;
+  --font-a: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-b: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   --font-c: "IBM Plex Sans", "Segoe UI", "Roboto", sans-serif;
   --font-body: var(--font-a);
 
@@ -24,10 +24,9 @@
   --accent-46: color-mix(in srgb, var(--accent-active) 46%, transparent);
 
   --text-main: #ffffff;
+  --text-heading: #e3e3e7;
   --text-subtle: #a6a6ad;
   --border-soft: rgba(203, 202, 203, 0.18);
-  --tech-dot: color-mix(in srgb, var(--accent-active) 20%, transparent);
-  --tech-grid: color-mix(in srgb, var(--accent-active) 12%, transparent);
 }
 
 * {
@@ -48,103 +47,8 @@ body {
   flex-direction: column;
   font-family: var(--font-body);
   color: var(--text-main);
-  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
+  background: #151518;
   line-height: 1.5;
-}
-
-body.font-a {
-  --font-body: var(--font-a);
-}
-
-body.font-b {
-  --font-body: var(--font-b);
-}
-
-body.font-c {
-  --font-body: var(--font-c);
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 1px 1px, var(--tech-dot) 1px, transparent 1.2px),
-    linear-gradient(var(--tech-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px);
-  background-size: 12px 12px, 72px 72px, 72px 72px;
-  background-position: 0 0, 0 0, 0 0;
-  opacity: 0.55;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 34%, rgba(0, 0, 0, 0.64) 100%),
-    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.03) 0 1px, transparent 1px 4px);
-}
-
-.product-page {
-  --product-before-image:
-    linear-gradient(140deg, rgba(0, 0, 0, 0.92) 10%, rgba(12, 12, 14, 0.72) 52%, rgba(21, 21, 24, 0.84) 100%),
-    linear-gradient(105deg, color-mix(in srgb, var(--accent-active) 9%, transparent) 0%, transparent 48%),
-    linear-gradient(90deg, color-mix(in srgb, var(--accent-active) 7%, transparent) 1px, transparent 1px),
-    linear-gradient(color-mix(in srgb, var(--accent-active) 5%, transparent) 1px, transparent 1px);
-  --product-before-size: auto, auto, 68px 68px, 68px 68px;
-  --product-before-position: center, center, 0 0, 0 0;
-  --product-before-opacity: 0.42;
-
-  --product-after-image:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.28) 30%, rgba(0, 0, 0, 0.86) 100%),
-    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent-active) 10%, transparent), transparent 42%),
-    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.018) 0 1px, transparent 1px 3px);
-}
-
-.product-page.bg-b {
-  --product-before-image:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.94) 0%, rgba(10, 11, 14, 0.78) 58%, rgba(0, 0, 0, 0.92) 100%),
-    linear-gradient(115deg, transparent 0%, color-mix(in srgb, var(--accent-active) 8%, transparent) 40%, transparent 78%),
-    linear-gradient(90deg, color-mix(in srgb, var(--accent-active) 6%, transparent) 1px, transparent 1px);
-  --product-before-size: auto, auto, 120px 120px;
-  --product-before-position: center, center, 0 0;
-  --product-before-opacity: 0.34;
-
-  --product-after-image:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.26) 36%, rgba(0, 0, 0, 0.88) 100%),
-    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.014) 0 1px, transparent 1px 5px);
-}
-
-.product-page.bg-c {
-  --product-before-image:
-    linear-gradient(160deg, rgba(0, 0, 0, 0.92) 0%, rgba(12, 12, 14, 0.75) 50%, rgba(21, 21, 24, 0.88) 100%),
-    radial-gradient(circle at 0 0, color-mix(in srgb, var(--accent-active) 12%, transparent), transparent 40%),
-    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--accent-active) 18%, transparent) 1px, transparent 1.2px),
-    linear-gradient(90deg, color-mix(in srgb, var(--accent-active) 7%, transparent) 1px, transparent 1px),
-    linear-gradient(color-mix(in srgb, var(--accent-active) 5%, transparent) 1px, transparent 1px);
-  --product-before-size: auto, auto, 12px 12px, 64px 64px, 64px 64px;
-  --product-before-position: center, left top, 0 0, 0 0, 0 0;
-  --product-before-opacity: 0.5;
-
-  --product-after-image:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.22) 34%, rgba(0, 0, 0, 0.86) 100%),
-    repeating-linear-gradient(180deg, rgba(203, 202, 203, 0.02) 0 1px, transparent 1px 3px);
-}
-
-.product-page::before {
-  background-image: var(--product-before-image);
-  background-size: var(--product-before-size);
-  background-position: var(--product-before-position);
-  opacity: var(--product-before-opacity);
-}
-
-.product-page::after {
-  background: var(--product-after-image);
 }
 
 a {
@@ -224,6 +128,7 @@ main {
   font-size: clamp(1.9rem, 3.8vw, 2.8rem);
   line-height: 1.1;
   font-weight: 700;
+  color: var(--text-heading);
 }
 
 .hero p {
@@ -241,7 +146,7 @@ main {
 .section-head h2 {
   margin: 0;
   font-size: 1.3rem;
-  color: var(--accent-active);
+  color: color-mix(in srgb, var(--accent-active) 74%, var(--text-subtle));
 }
 
 .product-grid {
@@ -281,15 +186,42 @@ main {
   padding: 14px;
 }
 
+.product-meta-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.product-meta-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 48px;
+}
+
+.product-card-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 22.5%;
+  border: 1px solid rgba(203, 202, 203, 0.22);
+  object-fit: cover;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
 .product-meta h3 {
-  margin: 0 0 4px;
+  margin: 0;
   font-size: 1.05rem;
+  line-height: 1.12;
 }
 
 .product-meta p {
   margin: 0;
   color: var(--text-subtle);
   font-size: 0.95rem;
+  line-height: 1.15;
 }
 
 .product-detail {
@@ -301,6 +233,20 @@ main {
   max-width: 1120px;
 }
 
+.home-detail,
+.support-detail {
+  max-width: 1120px;
+}
+
+.home-detail .product-hero {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.home-detail .product-hero-main {
+  max-width: 980px;
+}
+
 .product-hero {
   display: grid;
   grid-template-columns: 1.2fr minmax(280px, 0.8fr);
@@ -310,6 +256,9 @@ main {
 }
 
 .product-title {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 18px);
   font-size: clamp(2.4rem, 6.2vw, 5rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -317,11 +266,20 @@ main {
   margin-bottom: 16px;
 }
 
+.product-title-icon {
+  width: clamp(42px, 5.5vw, 50px);
+  height: clamp(42px, 5.5vw, 50px);
+  object-fit: cover;
+  border-radius: 22.5%;
+  border: 1px solid rgba(203, 202, 203, 0.22);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 10px 18px rgba(0, 0, 0, 0.42);
+}
+
 .hero-meta {
   margin: 0;
-  font-size: 0.86rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--text-subtle);
 }
 
@@ -445,6 +403,19 @@ main {
   gap: 22px;
 }
 
+.home-content .detail-block-main h2,
+.support-content .detail-block-main h2 {
+  margin-bottom: 14px;
+}
+
+.home-content .product-grid {
+  grid-template-columns: minmax(260px, 360px);
+}
+
+.support-content {
+  max-width: 760px;
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -471,6 +442,7 @@ main {
 
 .detail-block h2 {
   font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  color: var(--text-heading);
 }
 
 .detail-block h3 {
@@ -570,20 +542,12 @@ main {
   background: var(--accent-active);
 }
 
+
 .support-card {
-  border: 1px solid var(--border-soft);
-  border-radius: 16px;
-  padding: clamp(20px, 4vw, 36px);
-  background: linear-gradient(160deg, rgba(21, 21, 24, 0.92), rgba(12, 12, 14, 0.9));
-  max-width: 700px;
+  max-width: 100%;
 }
 
-.support-card p {
-  margin: 0;
-  color: var(--text-subtle);
-}
-
-.support-card .mail-link {
+.mail-link {
   color: var(--accent-active);
   font-weight: 600;
 }
