@@ -504,6 +504,120 @@ main {
   background: var(--accent-active);
 }
 
+.manual-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.manual-item {
+  margin: 0;
+  border: 1px solid var(--accent-14);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(6, 8, 12, 0.3);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.manual-item:hover {
+  border-color: var(--accent-28);
+}
+
+.manual-item:active {
+  transform: translateY(1px);
+}
+
+.manual-item:focus-visible {
+  outline: 2px solid var(--accent-active);
+  outline-offset: 2px;
+}
+
+.manual-item img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #07080b;
+}
+
+.manual-item figcaption {
+  padding: 9px 11px;
+  border-top: 1px solid var(--accent-14);
+  color: var(--text-subtle);
+  font-size: 0.86rem;
+}
+
+body.manual-modal-open {
+  overflow: hidden;
+}
+
+.manual-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  padding: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.manual-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.manual-modal-inner {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 10px;
+}
+
+.manual-modal-top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.manual-modal-close {
+  min-height: 52px;
+  padding: 8px 18px;
+  border: 1px solid var(--accent-28);
+  border-radius: 9px;
+  background: rgba(8, 10, 14, 0.9);
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.manual-modal-media-wrap {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.manual-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #050608;
+  border: 1px solid var(--accent-14);
+  border-radius: 8px;
+}
+
+.manual-modal-caption {
+  margin: 0;
+  color: var(--text-subtle);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 .privacy-content .detail-block-main h2 + p {
   margin-bottom: 20px;
 }
@@ -756,5 +870,15 @@ main {
 
   .feature-list li {
     font-size: 0.9rem;
+  }
+
+  .manual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manual-modal-close {
+    min-height: 54px;
+    padding: 10px 20px;
+    font-size: 1.02rem;
   }
 }
